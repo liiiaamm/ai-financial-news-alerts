@@ -1,0 +1,96 @@
+project:
+  name: "nlp-dl-alert-system"
+  seed: 42
+
+paths:
+  glove: "data/glove.6B.100d.txt"
+  finer_ord_raw: "data/finer_ord_with_alerts.jsonl"
+  checkpoints: "checkpoints/"
+  results: "results/"
+
+data:
+  max_seq_len: 128
+  min_word_freq: 2
+  val_split: 0.15
+  test_split: 0.15
+  batch_size: 32
+  num_workers: 0
+
+model:
+  embedding_dim: 100
+  hidden_dim: 256
+  num_layers: 2
+  dropout: 0.3
+  bidirectional: true
+
+ner:
+  # Tag set from FiNER-ORD (BIO scheme). YEAR_B/YEAR_I are added via regex post-processing.
+  # Tag indices must stay in this order — the model and dataset both rely on them.
+  tags: ["O","PER_B","PER_I","LOC_B","LOC_I","ORG_B","ORG_I", "YEAR_B", "YEAR_I"]
+  lr: 0.003
+  epochs: 20
+  clip_grad: 5.0
+  patience: 5
+
+sa:
+  classes: ["positive","negative","neutral"]
+  lr: 0.01
+  epochs: 25
+  clip_grad: 5.0
+  patience: 5
+
+joint:
+  lambda_ner: 0.6
+  lambda_sa: 0.4
+  lr: 0.001
+  epochs: 25
+  patience: 30
+
+captioning:
+  # Set use_deplot: true to use the DePlot+Qwen2.5 pre-trained pipeline
+  # (no training needed). Set false to train the CNN+LSTM model from scratch.
+  use_deplot: false
+  deplot_model: "google/deplot"
+  qwen_model: "Qwen/Qwen2.5-1.5B-Instruct"
+  deplot_max_table_tokens: 512
+  deplot_max_caption_tokens: 200
+  deplot_temperature: 0.3
+  # CNN+LSTM settings (used when use_deplot: false)
+  hidden_size: 512
+  num_layers: 1
+  max_caption_len: 20
+  vocab_threshold: 2
+  lr_encoder: 0.0001
+  lr_decoder: 0.001
+  epochs: 20
+  patience: 5
+  batch_size: 32
+  clip_grad: 5.0
+  dataset_hf: "shamanthakhegde/ChartQA-X"
+  spacy_model: "en_core_web_md"
+  caption_field: "Explanation"
+
+alert:
+  use_neural: false
+  use_llm: false          # set to true to use the LLM for alert generation
+  use_local_llm: false    # true → load Qwen from a local directory (no HF_TOKEN needed)
+                          # false → use the HuggingFace inference API (requires HF_TOKEN)
+  llm_model: "Qwen/Qwen2.5-1.5B-Instruct:featherless-ai"   # API model ID
+  local_model_dir: null   # optional: custom HuggingFace cache dir (null = ~/.cache/huggingface)
+  llm_max_tokens: 80
+  llm_temperature: 0.3
+  n_synthetic: 500
+  hidden_dims: [64, 32]
+  dropout: 0.3
+  lr: 0.01
+  epochs: 100
+  batch_size: 32
+  val_split: 0.2
+  patience: 10
+
+pipeline:
+  use_joint: false        # if true, use the shared encoder; if false, run NER and SA as separate models
+  use_llm: false          # if true, use the LLM for alert generation (requires HF_TOKEN)
+  include_text: false     # if false, only NER tags, sentiment and caption are sent to the LLM (not the raw sentence)
+  parallel: true          # if true, run captioning, NER and SA in parallel
+  verbose: false

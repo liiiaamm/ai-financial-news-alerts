@@ -1,0 +1,911 @@
+{
+  "run_info": {
+    "timestamp": "2026-04-22T20:41:18",
+    "use_joint": true,
+    "use_deplot": false,
+    "use_llm": false,
+    "total_items": 10,
+    "successful": 10,
+    "failed": 0
+  },
+  "results": [
+    {
+      "item_id": "p1",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "For the first quarter of their 2026 fiscal year, Apple reported a revenue of 143.76 billion U.S. dollars. This was the highest quarterly revenue of the company.",
+          "output": [
+            {
+              "text": "2026",
+              "type": "YEAR",
+              "start": 6,
+              "end": 6
+            },
+            {
+              "text": "year,",
+              "type": "ORG",
+              "start": 8,
+              "end": 8
+            },
+            {
+              "text": "Apple",
+              "type": "ORG",
+              "start": 9,
+              "end": 9
+            }
+          ]
+        },
+        "sa": {
+          "input": "For the first quarter of their 2026 fiscal year, Apple reported a revenue of 143.76 billion U.S. dollars. This was the highest quarterly revenue of the company.",
+          "output": {
+            "sentiment": "negative",
+            "score": 0.6783
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 0.6783,
+      "entities": [
+        {
+          "text": "2026",
+          "type": "YEAR",
+          "start": 6,
+          "end": 6
+        },
+        {
+          "text": "year,",
+          "type": "ORG",
+          "start": 8,
+          "end": 8
+        },
+        {
+          "text": "Apple",
+          "type": "ORG",
+          "start": 9,
+          "end": 9
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: year, mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p10",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Monthly personal savings as a share of disposable income in the U.S. 2015-2026. Published by Statista Research Department, Mar 23, 2026. In January 2026, the personal savings rate in the United States amounted to 4.5 percent. That was a slightly lower figure than a year earlier. The personal savings rate is calculated as the ratio of personal savings to disposable personal income. Within the topic of personal savings in the U.S., there are different goals and reasons for saving. What are personal savings? Saving refers to strategies of accumulating capital for future use by either not spending a part of one’s income or cutting down on certain costs. Saved money may be preserved as cash, put on a deposit account, or invested in various financial instruments. Investing usually incorporates some level of risk which means that part of the invested money can be gone. An example of a relatively safe investment would be saving bonds, such as the debt securities issued by the U.S. Department of the Treasury. Saving trends in the U.S. and abroad. Looking at the personal saving rate in the United States throughout the past decades, it can be observed that savings had been decreasing until the mid-2000s, and they increased after the 2008 financial crisis. Still, the largest savings rates were reached in 2020 and 2021. The reason for that increase in the savings rate that year might be related to the measures to contain the COVID-19 pandemic. The value of personal savings in the United Kingdom has also followed a similar trend. Although events like the COVID-19 pandemic may have affect many countries in a similar way, the ability to save, as well as the average savings as a share of personal income across countries can vary significantly depending on multiple factors affecting each territory.",
+          "output": [
+            {
+              "text": "Statista",
+              "type": "ORG",
+              "start": 15,
+              "end": 15
+            },
+            {
+              "text": "Mar 23,",
+              "type": "PER",
+              "start": 18,
+              "end": 19
+            },
+            {
+              "text": "United States",
+              "type": "LOC",
+              "start": 30,
+              "end": 31
+            }
+          ]
+        },
+        "sa": {
+          "input": "Monthly personal savings as a share of disposable income in the U.S. 2015-2026. Published by Statista Research Department, Mar 23, 2026. In January 2026, the personal savings rate in the United States amounted to 4.5 percent. That was a slightly lower figure than a year earlier. The personal savings rate is calculated as the ratio of personal savings to disposable personal income. Within the topic of personal savings in the U.S., there are different goals and reasons for saving. What are personal savings? Saving refers to strategies of accumulating capital for future use by either not spending a part of one’s income or cutting down on certain costs. Saved money may be preserved as cash, put on a deposit account, or invested in various financial instruments. Investing usually incorporates some level of risk which means that part of the invested money can be gone. An example of a relatively safe investment would be saving bonds, such as the debt securities issued by the U.S. Department of the Treasury. Saving trends in the U.S. and abroad. Looking at the personal saving rate in the United States throughout the past decades, it can be observed that savings had been decreasing until the mid-2000s, and they increased after the 2008 financial crisis. Still, the largest savings rates were reached in 2020 and 2021. The reason for that increase in the savings rate that year might be related to the measures to contain the COVID-19 pandemic. The value of personal savings in the United Kingdom has also followed a similar trend. Although events like the COVID-19 pandemic may have affect many countries in a similar way, the ability to save, as well as the average savings as a share of personal income across countries can vary significantly depending on multiple factors affecting each territory.",
+          "output": {
+            "sentiment": "negative",
+            "score": 0.9061
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 0.9061,
+      "entities": [
+        {
+          "text": "Statista",
+          "type": "ORG",
+          "start": 15,
+          "end": 15
+        },
+        {
+          "text": "Mar 23,",
+          "type": "PER",
+          "start": 18,
+          "end": 19
+        },
+        {
+          "text": "United States",
+          "type": "LOC",
+          "start": 30,
+          "end": 31
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: Statista mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p2",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "The statistic shows the development of the primary credit rate in the United States from 2003 to 2024. The primary credit rate depicts the rate at which central banks extend loans to financial institutions for a short duration. The primary credit rate in the United States amounted to 4.5 percent as of 2024.",
+          "output": [
+            {
+              "text": "United States",
+              "type": "LOC",
+              "start": 12,
+              "end": 13
+            },
+            {
+              "text": "2003",
+              "type": "YEAR",
+              "start": 15,
+              "end": 15
+            },
+            {
+              "text": "United States",
+              "type": "LOC",
+              "start": 44,
+              "end": 45
+            }
+          ]
+        },
+        "sa": {
+          "input": "The statistic shows the development of the primary credit rate in the United States from 2003 to 2024. The primary credit rate depicts the rate at which central banks extend loans to financial institutions for a short duration. The primary credit rate in the United States amounted to 4.5 percent as of 2024.",
+          "output": {
+            "sentiment": "neutral",
+            "score": 0.7406
+          }
+        }
+      },
+      "sentiment": "neutral",
+      "score": 0.7406,
+      "entities": [
+        {
+          "text": "United States",
+          "type": "LOC",
+          "start": 12,
+          "end": 13
+        },
+        {
+          "text": "2003",
+          "type": "YEAR",
+          "start": 15,
+          "end": 15
+        },
+        {
+          "text": "United States",
+          "type": "LOC",
+          "start": 44,
+          "end": 45
+        }
+      ],
+      "caption": null,
+      "alert_type": "INFO",
+      "alert_text": "INFO: neutral content. Entities: United States [LOC], 2003 [YEAR], United States [LOC].",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p3",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "On May 18, 2012, Mark Zuckerberg took Facebook public in what became the biggest initial public offering (IPO) in tech history at the time. At close, 567 million shares had been traded at an average price of $38 per share, topping the record for the biggest first trading day set by General Motors in 2010 by around 120 million shares according to CNN. Now, Zuckerberg's company is called Meta and shares are traded at $200. How do these gains stack up to Meta's Big Tech competitors and which stock has become the most profitable over the last ten years? As our chart based on data from Yahoo Finance and Statista calculations shows, investing in Amazon would've paid off the most when comparing the prices from today and ten years ago. Investing $1,000 on May 17, 2012, would have resulted in $10,149 today. Coming in second is Microsoft, which went public in 1986 and would have netted investors $8,798 over the last ten years if they would've bought company shares for $1,000 back then. Meta, on the other hand, sits in last place with only $5,264 generated out of $1,000. Even though minor fluctuations in tech stock are not unusual, this sector has seen relatively big drops in the past couple of weeks. While share prices for Amazon, Microsoft, Alphabet and Apple started going down at the beginning of April, Meta felt the stock market twinge even earlier. On January 10, the company's share price started its downhill tumble at about $332, now it's worth almost 40 percent less. Some reasons for this dip in value include investors speculating that GAFAM will be coming down from its pandemic high sooner rather than later and the exorbitant rise in interest rates, which makes investing in safe bonds rather than high-risk stocks more appealing.",
+          "output": [
+            {
+              "text": "Mark Zuckerberg",
+              "type": "PER",
+              "start": 4,
+              "end": 5
+            },
+            {
+              "text": "Facebook",
+              "type": "ORG",
+              "start": 7,
+              "end": 7
+            },
+            {
+              "text": "close, 567",
+              "type": "ORG",
+              "start": 25,
+              "end": 26
+            },
+            {
+              "text": "General Motors",
+              "type": "ORG",
+              "start": 51,
+              "end": 52
+            },
+            {
+              "text": "2010",
+              "type": "YEAR",
+              "start": 54,
+              "end": 54
+            },
+            {
+              "text": "CNN.",
+              "type": "ORG",
+              "start": 62,
+              "end": 62
+            },
+            {
+              "text": "Yahoo",
+              "type": "ORG",
+              "start": 106,
+              "end": 106
+            },
+            {
+              "text": "Statista calculations",
+              "type": "PER",
+              "start": 109,
+              "end": 110
+            },
+            {
+              "text": "Amazon",
+              "type": "ORG",
+              "start": 114,
+              "end": 114
+            }
+          ]
+        },
+        "sa": {
+          "input": "On May 18, 2012, Mark Zuckerberg took Facebook public in what became the biggest initial public offering (IPO) in tech history at the time. At close, 567 million shares had been traded at an average price of $38 per share, topping the record for the biggest first trading day set by General Motors in 2010 by around 120 million shares according to CNN. Now, Zuckerberg's company is called Meta and shares are traded at $200. How do these gains stack up to Meta's Big Tech competitors and which stock has become the most profitable over the last ten years? As our chart based on data from Yahoo Finance and Statista calculations shows, investing in Amazon would've paid off the most when comparing the prices from today and ten years ago. Investing $1,000 on May 17, 2012, would have resulted in $10,149 today. Coming in second is Microsoft, which went public in 1986 and would have netted investors $8,798 over the last ten years if they would've bought company shares for $1,000 back then. Meta, on the other hand, sits in last place with only $5,264 generated out of $1,000. Even though minor fluctuations in tech stock are not unusual, this sector has seen relatively big drops in the past couple of weeks. While share prices for Amazon, Microsoft, Alphabet and Apple started going down at the beginning of April, Meta felt the stock market twinge even earlier. On January 10, the company's share price started its downhill tumble at about $332, now it's worth almost 40 percent less. Some reasons for this dip in value include investors speculating that GAFAM will be coming down from its pandemic high sooner rather than later and the exorbitant rise in interest rates, which makes investing in safe bonds rather than high-risk stocks more appealing.",
+          "output": {
+            "sentiment": "positive",
+            "score": 0.9919
+          }
+        }
+      },
+      "sentiment": "positive",
+      "score": 0.9919,
+      "entities": [
+        {
+          "text": "Mark Zuckerberg",
+          "type": "PER",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "text": "Facebook",
+          "type": "ORG",
+          "start": 7,
+          "end": 7
+        },
+        {
+          "text": "close, 567",
+          "type": "ORG",
+          "start": 25,
+          "end": 26
+        },
+        {
+          "text": "General Motors",
+          "type": "ORG",
+          "start": 51,
+          "end": 52
+        },
+        {
+          "text": "2010",
+          "type": "YEAR",
+          "start": 54,
+          "end": 54
+        },
+        {
+          "text": "CNN.",
+          "type": "ORG",
+          "start": 62,
+          "end": 62
+        },
+        {
+          "text": "Yahoo",
+          "type": "ORG",
+          "start": 106,
+          "end": 106
+        },
+        {
+          "text": "Statista calculations",
+          "type": "PER",
+          "start": 109,
+          "end": 110
+        },
+        {
+          "text": "Amazon",
+          "type": "ORG",
+          "start": 114,
+          "end": 114
+        }
+      ],
+      "caption": null,
+      "alert_type": "ECONOMIC_UPDATE",
+      "alert_text": "POSITIVE UPDATE: Facebook reported POSITIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p4",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Despite the challenging macroeconomic environment and a high degree of uncertainty regarding the impact of the Iran war on the U.S. economy, the Fed remains cautiously optimistic in its latest economic outlook. In fact, Fed officials upped their GDP growth outlook for 2026 ever so slightly, citing resilient consumer spending and expanding private investments as reasons for the upgrade. The Federal Open Market Committee's median growth projection for 2026 is now 2.4 percent, up from 2.3 percent in December and just 1.8 percent in September. For 2027, the FOMC is now predicting 2.3 percent growth, up from 2.0 percent in its December projections, while real GDP growth is now expected to slow to 2.1 percent in 2028. In 2025, real GDP expanded 2.1 percent according to the latest estimate, which is more than the Fed predicted in December after a year that was shaped by the impact of tariff anticipation and tariff reaction, which saw GDP growth swing wildly from quarter to quarter. In Q1 2025, real GDP had contracted 0.6 percent, due to tariff frontloading resulting in a steep increase in imports, which is a subtraction in the calculation of GDP. In the second quarter, the opposite effect, i.e. a steep decline in imports due to tariffs, resulted in 3.8 percent growth, neither of both readings accurately reflecting the fundamental state of the economy. In terms of consumer prices, Fed officials now expect inflation to remain higher in the short term than previously anticipated. The steep rise in oil and energy prices since the start of the war in Iran will likely prevent further cooling of inflation, as non-energy prices will also be affected by higher input costs. The Fed is now expecting 2.7 percent PCE inflation in Q4 2026, compared to a previous estimate of 2.4 percent. By the end of 2027, Fed officials expect inflation to cool to 2.2 percent before returning to the Fed's target level of 2 percent in 2028. Looking at the labor market, FOMC members expect the unemployment rate to peak at the current level of 4.4 percent before gradually falling to 4.2 percent by 2028.",
+          "output": [
+            {
+              "text": "Iran",
+              "type": "LOC",
+              "start": 16,
+              "end": 16
+            },
+            {
+              "text": "U.S.",
+              "type": "LOC",
+              "start": 20,
+              "end": 20
+            },
+            {
+              "text": "Fed",
+              "type": "ORG",
+              "start": 23,
+              "end": 23
+            },
+            {
+              "text": "fact,",
+              "type": "ORG",
+              "start": 33,
+              "end": 33
+            },
+            {
+              "text": "Fed",
+              "type": "ORG",
+              "start": 34,
+              "end": 34
+            },
+            {
+              "text": "2026",
+              "type": "YEAR",
+              "start": 42,
+              "end": 42
+            },
+            {
+              "text": "2026",
+              "type": "YEAR",
+              "start": 68,
+              "end": 68
+            }
+          ]
+        },
+        "sa": {
+          "input": "Despite the challenging macroeconomic environment and a high degree of uncertainty regarding the impact of the Iran war on the U.S. economy, the Fed remains cautiously optimistic in its latest economic outlook. In fact, Fed officials upped their GDP growth outlook for 2026 ever so slightly, citing resilient consumer spending and expanding private investments as reasons for the upgrade. The Federal Open Market Committee's median growth projection for 2026 is now 2.4 percent, up from 2.3 percent in December and just 1.8 percent in September. For 2027, the FOMC is now predicting 2.3 percent growth, up from 2.0 percent in its December projections, while real GDP growth is now expected to slow to 2.1 percent in 2028. In 2025, real GDP expanded 2.1 percent according to the latest estimate, which is more than the Fed predicted in December after a year that was shaped by the impact of tariff anticipation and tariff reaction, which saw GDP growth swing wildly from quarter to quarter. In Q1 2025, real GDP had contracted 0.6 percent, due to tariff frontloading resulting in a steep increase in imports, which is a subtraction in the calculation of GDP. In the second quarter, the opposite effect, i.e. a steep decline in imports due to tariffs, resulted in 3.8 percent growth, neither of both readings accurately reflecting the fundamental state of the economy. In terms of consumer prices, Fed officials now expect inflation to remain higher in the short term than previously anticipated. The steep rise in oil and energy prices since the start of the war in Iran will likely prevent further cooling of inflation, as non-energy prices will also be affected by higher input costs. The Fed is now expecting 2.7 percent PCE inflation in Q4 2026, compared to a previous estimate of 2.4 percent. By the end of 2027, Fed officials expect inflation to cool to 2.2 percent before returning to the Fed's target level of 2 percent in 2028. Looking at the labor market, FOMC members expect the unemployment rate to peak at the current level of 4.4 percent before gradually falling to 4.2 percent by 2028.",
+          "output": {
+            "sentiment": "negative",
+            "score": 1.0
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 1.0,
+      "entities": [
+        {
+          "text": "Iran",
+          "type": "LOC",
+          "start": 16,
+          "end": 16
+        },
+        {
+          "text": "U.S.",
+          "type": "LOC",
+          "start": 20,
+          "end": 20
+        },
+        {
+          "text": "Fed",
+          "type": "ORG",
+          "start": 23,
+          "end": 23
+        },
+        {
+          "text": "fact,",
+          "type": "ORG",
+          "start": 33,
+          "end": 33
+        },
+        {
+          "text": "Fed",
+          "type": "ORG",
+          "start": 34,
+          "end": 34
+        },
+        {
+          "text": "2026",
+          "type": "YEAR",
+          "start": 42,
+          "end": 42
+        },
+        {
+          "text": "2026",
+          "type": "YEAR",
+          "start": 68,
+          "end": 68
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: Fed mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p5",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Following the Standard & Poor's 500 stock market index's performance since its launch in March 1957, you are left wondering whether the steep mountain that has piled up since the 1980s is admirable or depressing. When you look at the bigger picture over the past 60 years, the question arises if the most recent headlines about the stock market woes somehow miss the point. You can clearly make out the two most severe recent crashes: the Dot-Com Bubble that started bursting in 2000 and the Financial Crisis that took hold late in 2007. The S&P is based on the market capitalization of 500 large domestic companies listed on the NYSE or NASDAQ. Formerly called the Composite Index, and later Standard & Poor’s Composite Index, the index had first been launched on a small scale in 1923, it began tracking 90 stocks in 1926 and expanded to the current 500 in 1957. Here's an overview of other stock market indices.",
+          "output": [
+            {
+              "text": "2000",
+              "type": "YEAR",
+              "start": 82,
+              "end": 82
+            },
+            {
+              "text": "NYSE",
+              "type": "ORG",
+              "start": 109,
+              "end": 109
+            },
+            {
+              "text": "NASDAQ.",
+              "type": "ORG",
+              "start": 111,
+              "end": 111
+            }
+          ]
+        },
+        "sa": {
+          "input": "Following the Standard & Poor's 500 stock market index's performance since its launch in March 1957, you are left wondering whether the steep mountain that has piled up since the 1980s is admirable or depressing. When you look at the bigger picture over the past 60 years, the question arises if the most recent headlines about the stock market woes somehow miss the point. You can clearly make out the two most severe recent crashes: the Dot-Com Bubble that started bursting in 2000 and the Financial Crisis that took hold late in 2007. The S&P is based on the market capitalization of 500 large domestic companies listed on the NYSE or NASDAQ. Formerly called the Composite Index, and later Standard & Poor’s Composite Index, the index had first been launched on a small scale in 1923, it began tracking 90 stocks in 1926 and expanded to the current 500 in 1957. Here's an overview of other stock market indices.",
+          "output": {
+            "sentiment": "negative",
+            "score": 0.9995
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 0.9995,
+      "entities": [
+        {
+          "text": "2000",
+          "type": "YEAR",
+          "start": 82,
+          "end": 82
+        },
+        {
+          "text": "NYSE",
+          "type": "ORG",
+          "start": 109,
+          "end": 109
+        },
+        {
+          "text": "NASDAQ.",
+          "type": "ORG",
+          "start": 111,
+          "end": 111
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: NYSE mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p6",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Share price index in major developed and emerging economies 2019-2025. Published by K. Scholle, Mar 3, 2026. From January 2019 to June 2025, financial markets in India and Brazil outpaced developed markets, with India’s share price index more than doubling and Brazil also climbing sharply. In contrast, developed economies—the United States, Euro area, Germany, France, United Kingdom, and Japan—showed steadier, more moderate gains. Japan is an exception among developed countries, experiencing high volatility but ultimately trending upward. Also, China’s and Russia’s markets showed little growth, diverging from the success of other emerging peers. Most indices experienced a marked dip in early 2020, corresponding with the COVID-19 market shock, but recovered afterwards.",
+          "output": [
+            {
+              "text": "K. Scholle,",
+              "type": "PER",
+              "start": 12,
+              "end": 13
+            },
+            {
+              "text": "2019",
+              "type": "YEAR",
+              "start": 19,
+              "end": 19
+            },
+            {
+              "text": "India",
+              "type": "LOC",
+              "start": 26,
+              "end": 26
+            },
+            {
+              "text": "Brazil",
+              "type": "LOC",
+              "start": 28,
+              "end": 28
+            },
+            {
+              "text": "Brazil",
+              "type": "LOC",
+              "start": 41,
+              "end": 41
+            },
+            {
+              "text": "United",
+              "type": "LOC",
+              "start": 49,
+              "end": 49
+            },
+            {
+              "text": "United",
+              "type": "LOC",
+              "start": 55,
+              "end": 55
+            },
+            {
+              "text": "Japan—showed",
+              "type": "ORG",
+              "start": 58,
+              "end": 58
+            },
+            {
+              "text": "Japan",
+              "type": "LOC",
+              "start": 63,
+              "end": 63
+            }
+          ]
+        },
+        "sa": {
+          "input": "Share price index in major developed and emerging economies 2019-2025. Published by K. Scholle, Mar 3, 2026. From January 2019 to June 2025, financial markets in India and Brazil outpaced developed markets, with India’s share price index more than doubling and Brazil also climbing sharply. In contrast, developed economies—the United States, Euro area, Germany, France, United Kingdom, and Japan—showed steadier, more moderate gains. Japan is an exception among developed countries, experiencing high volatility but ultimately trending upward. Also, China’s and Russia’s markets showed little growth, diverging from the success of other emerging peers. Most indices experienced a marked dip in early 2020, corresponding with the COVID-19 market shock, but recovered afterwards.",
+          "output": {
+            "sentiment": "negative",
+            "score": 0.9471
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 0.9471,
+      "entities": [
+        {
+          "text": "K. Scholle,",
+          "type": "PER",
+          "start": 12,
+          "end": 13
+        },
+        {
+          "text": "2019",
+          "type": "YEAR",
+          "start": 19,
+          "end": 19
+        },
+        {
+          "text": "India",
+          "type": "LOC",
+          "start": 26,
+          "end": 26
+        },
+        {
+          "text": "Brazil",
+          "type": "LOC",
+          "start": 28,
+          "end": 28
+        },
+        {
+          "text": "Brazil",
+          "type": "LOC",
+          "start": 41,
+          "end": 41
+        },
+        {
+          "text": "United",
+          "type": "LOC",
+          "start": 49,
+          "end": 49
+        },
+        {
+          "text": "United",
+          "type": "LOC",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "text": "Japan—showed",
+          "type": "ORG",
+          "start": 58,
+          "end": 58
+        },
+        {
+          "text": "Japan",
+          "type": "LOC",
+          "start": 63,
+          "end": 63
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: Japan—showed mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p7",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Market capitalization of 100 largest banks worldwide 2016-2025. Published by K. Scholle, Mar 3, 2026. The global banking sector has seen significant growth in recent years, with the market capitalization of the 100 largest banks reaching 7.4 trillion euros in early 2025. This marks the highest value observed since 2016, reflecting a strong recovery and expansion in the banking industry. The upward trend is particularly noteworthy given the fluctuations experienced in previous years, including the sharp decline during the early stages of the COVID-19 pandemic in 2020. Chinese banks dominate global rankings. While market capitalization provides one measure of bank size, total assets offer another perspective. In 2023, Chinese banks occupied the top four positions globally based on total assets, with the Industrial and Commercial Bank of China (ICBC) leading at approximately 6.3 trillion U.S. dollars. However, when ranked by market capitalization, JPMorgan Chase took the top spot, with ICBC falling to third place. This highlights the different metrics used to assess bank size and influence in the global financial landscape. China's banking sector continues to expand. The growth in market capitalization of the world's largest banks is mirrored by the expansion of China's banking sector. By 2023, the number of banking institutions in China had reached 4,425, showing relative stability in recent years after a period of increase. Additionally, the value of bank assets in China amounted to over 50 trillion U.S. dollars in 2023, nearly tripling over the past decade. This rapid growth underscores China's increasing importance in the global banking industry and its potential influence on overall market capitalization trends.",
+          "output": [
+            {
+              "text": "K. Scholle,",
+              "type": "PER",
+              "start": 10,
+              "end": 11
+            },
+            {
+              "text": "China",
+              "type": "LOC",
+              "start": 127,
+              "end": 127
+            }
+          ]
+        },
+        "sa": {
+          "input": "Market capitalization of 100 largest banks worldwide 2016-2025. Published by K. Scholle, Mar 3, 2026. The global banking sector has seen significant growth in recent years, with the market capitalization of the 100 largest banks reaching 7.4 trillion euros in early 2025. This marks the highest value observed since 2016, reflecting a strong recovery and expansion in the banking industry. The upward trend is particularly noteworthy given the fluctuations experienced in previous years, including the sharp decline during the early stages of the COVID-19 pandemic in 2020. Chinese banks dominate global rankings. While market capitalization provides one measure of bank size, total assets offer another perspective. In 2023, Chinese banks occupied the top four positions globally based on total assets, with the Industrial and Commercial Bank of China (ICBC) leading at approximately 6.3 trillion U.S. dollars. However, when ranked by market capitalization, JPMorgan Chase took the top spot, with ICBC falling to third place. This highlights the different metrics used to assess bank size and influence in the global financial landscape. China's banking sector continues to expand. The growth in market capitalization of the world's largest banks is mirrored by the expansion of China's banking sector. By 2023, the number of banking institutions in China had reached 4,425, showing relative stability in recent years after a period of increase. Additionally, the value of bank assets in China amounted to over 50 trillion U.S. dollars in 2023, nearly tripling over the past decade. This rapid growth underscores China's increasing importance in the global banking industry and its potential influence on overall market capitalization trends.",
+          "output": {
+            "sentiment": "positive",
+            "score": 0.9792
+          }
+        }
+      },
+      "sentiment": "positive",
+      "score": 0.9792,
+      "entities": [
+        {
+          "text": "K. Scholle,",
+          "type": "PER",
+          "start": 10,
+          "end": 11
+        },
+        {
+          "text": "China",
+          "type": "LOC",
+          "start": 127,
+          "end": 127
+        }
+      ],
+      "caption": null,
+      "alert_type": "ECONOMIC_UPDATE",
+      "alert_text": "POSITIVE UPDATE: K. Scholle, mentioned in positive context.",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p8",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "EUR/USD FX rate, up to Feb 23, 2026. Published by Statista Research Department, Mar 16, 2026. The euro-to-dollar exchange rate fluctuated significantly in 2022, reaching its lowest recorded value since 2008 during that time. Figures were different later in the year, however, with a rate of 1.18 USD recorded at the end of February 23, 2026. The average (standardized) measure is based on the calculation of many observations throughout the period in question. It is therefore different from an annual measure at a point, which reflects concrete values as of end of the year. Establishment. The euro, which was established in 1992, introduced in non-physical form in 1999 and finally rolled out in 2002, is used by 19 of the 27 member states of the European Union. This group of countries is otherwise known as the eurozone or euro area. By 2018, the total value of euro currency in circulation was almost 1.2 trillion euros, or over 3.4 thousand euros per capita.. Euro to USD. Between 2001 and 2008, the average annual exchange rate of the euro to the U.S. dollar noted a steep increase. In 2008, the euro to U.S. dollar annual average exchange rate was equal to 1.47, which meant that one euro could buy 1.47 U.S. dollars. By 2019, this value had decreased overall, to a value of 1.12 which meant that one euro could buy 1.12 U.S. dollars. Similar dynamics in the euro to U.S. dollar exchange rate were also reflected in the monthly exchange rate recently.",
+          "output": [
+            {
+              "text": "Statista",
+              "type": "ORG",
+              "start": 10,
+              "end": 10
+            },
+            {
+              "text": "Mar 16,",
+              "type": "PER",
+              "start": 13,
+              "end": 14
+            },
+            {
+              "text": "2008",
+              "type": "YEAR",
+              "start": 30,
+              "end": 30
+            },
+            {
+              "text": "1999",
+              "type": "YEAR",
+              "start": 107,
+              "end": 107
+            }
+          ]
+        },
+        "sa": {
+          "input": "EUR/USD FX rate, up to Feb 23, 2026. Published by Statista Research Department, Mar 16, 2026. The euro-to-dollar exchange rate fluctuated significantly in 2022, reaching its lowest recorded value since 2008 during that time. Figures were different later in the year, however, with a rate of 1.18 USD recorded at the end of February 23, 2026. The average (standardized) measure is based on the calculation of many observations throughout the period in question. It is therefore different from an annual measure at a point, which reflects concrete values as of end of the year. Establishment. The euro, which was established in 1992, introduced in non-physical form in 1999 and finally rolled out in 2002, is used by 19 of the 27 member states of the European Union. This group of countries is otherwise known as the eurozone or euro area. By 2018, the total value of euro currency in circulation was almost 1.2 trillion euros, or over 3.4 thousand euros per capita.. Euro to USD. Between 2001 and 2008, the average annual exchange rate of the euro to the U.S. dollar noted a steep increase. In 2008, the euro to U.S. dollar annual average exchange rate was equal to 1.47, which meant that one euro could buy 1.47 U.S. dollars. By 2019, this value had decreased overall, to a value of 1.12 which meant that one euro could buy 1.12 U.S. dollars. Similar dynamics in the euro to U.S. dollar exchange rate were also reflected in the monthly exchange rate recently.",
+          "output": {
+            "sentiment": "neutral",
+            "score": 0.5011
+          }
+        }
+      },
+      "sentiment": "neutral",
+      "score": 0.5011,
+      "entities": [
+        {
+          "text": "Statista",
+          "type": "ORG",
+          "start": 10,
+          "end": 10
+        },
+        {
+          "text": "Mar 16,",
+          "type": "PER",
+          "start": 13,
+          "end": 14
+        },
+        {
+          "text": "2008",
+          "type": "YEAR",
+          "start": 30,
+          "end": 30
+        },
+        {
+          "text": "1999",
+          "type": "YEAR",
+          "start": 107,
+          "end": 107
+        }
+      ],
+      "caption": null,
+      "alert_type": "INFO",
+      "alert_text": "INFO: neutral content. Entities: Statista [ORG], Mar 16, [PER], 2008 [YEAR], 1999 [YEAR].",
+      "alert_mode": "rule_based",
+      "error": null
+    },
+    {
+      "item_id": "p9",
+      "flags": {
+        "use_joint": true,
+        "use_deplot": false,
+        "use_llm": false
+      },
+      "models_io": {
+        "ner": {
+          "input": "Treasury yield curve in the U.S. 2025. Published by K. Scholle, Mar 3, 2026. As of July 22, 2025, the yield for a ten-year U.S. government bond was 4.38 percent, while the yield for a two-year bond was 3.88 percent. This represents an inverted yield curve, whereby bonds of longer maturities provide a lower yield, reflecting investors' expectations for a decline in long-term interest rates. Hence, making long-term debt holders open to more risk under the uncertainty around the condition of financial markets in the future. That markets are uncertain can be seen by considering both the short-term fluctuations, and the long-term downward trend, of the yields of U.S. government bonds from 2006 to 2021, before the treasury yield curve increased again significantly in the following years. What are government bonds? Government bonds, otherwise called ‘sovereign’ or ‘treasury’ bonds, are financial instruments used by governments to raise money for government spending. Investors give the government a certain amount of money (the ‘face value’), to be repaid at a specified time in the future (the ‘maturity date’). In addition, the government makes regular periodic interest payments (called ‘coupon payments’). Once initially issued, government bonds are tradable on financial markets, meaning their value can fluctuate over time (even though the underlying face value and coupon payments remain the same). Investors are attracted to government bonds as, provided the country in question has a stable economy and political system, they are a very safe investment. Accordingly, in periods of economic turmoil, investors may be willing to accept a negative overall return in order to have a safe haven for their money. For example, once the market value is compared to the total received from remaining interest payments and the face value, investors have been willing to accept a negative return on two-year German government bonds between 2014 and 2021. Conversely, if the underlying economy and political structures are weak, investors demand a higher return to compensate for the higher risk they take on. Consequently, the return on bonds in emerging markets like Brazil are consistently higher than that of the United States (and other developed economies). Inverted yield curves. When investors are worried about the financial future, it can lead to what is called an ‘inverted yield curve’. An inverted yield curve is where investors pay more for short term bonds than long term, indicating they do not have confidence in long-term financial conditions. Historically, the yield curve has historically inverted before each of the last five U.S. recessions. The last U.S. yield curve inversion occurred at several brief points in 2019 – a trend which continued until the Federal Reserve cut interest rates several times over that year. However, the ultimate trigger for the next recession was the unpredicted, exogenous shock of the global coronavirus (COVID-19) pandemic, showing how such informal indicators may be grounded just as much in coincidence as causation.",
+          "output": [
+            {
+              "text": "Treasury",
+              "type": "ORG",
+              "start": 0,
+              "end": 0
+            },
+            {
+              "text": "U.S. 2025.",
+              "type": "ORG",
+              "start": 5,
+              "end": 6
+            },
+            {
+              "text": "K. Scholle,",
+              "type": "PER",
+              "start": 9,
+              "end": 10
+            },
+            {
+              "text": "3,",
+              "type": "PER",
+              "start": 12,
+              "end": 12
+            },
+            {
+              "text": "2006",
+              "type": "YEAR",
+              "start": 112,
+              "end": 112
+            },
+            {
+              "text": "treasury",
+              "type": "ORG",
+              "start": 117,
+              "end": 117
+            }
+          ]
+        },
+        "sa": {
+          "input": "Treasury yield curve in the U.S. 2025. Published by K. Scholle, Mar 3, 2026. As of July 22, 2025, the yield for a ten-year U.S. government bond was 4.38 percent, while the yield for a two-year bond was 3.88 percent. This represents an inverted yield curve, whereby bonds of longer maturities provide a lower yield, reflecting investors' expectations for a decline in long-term interest rates. Hence, making long-term debt holders open to more risk under the uncertainty around the condition of financial markets in the future. That markets are uncertain can be seen by considering both the short-term fluctuations, and the long-term downward trend, of the yields of U.S. government bonds from 2006 to 2021, before the treasury yield curve increased again significantly in the following years. What are government bonds? Government bonds, otherwise called ‘sovereign’ or ‘treasury’ bonds, are financial instruments used by governments to raise money for government spending. Investors give the government a certain amount of money (the ‘face value’), to be repaid at a specified time in the future (the ‘maturity date’). In addition, the government makes regular periodic interest payments (called ‘coupon payments’). Once initially issued, government bonds are tradable on financial markets, meaning their value can fluctuate over time (even though the underlying face value and coupon payments remain the same). Investors are attracted to government bonds as, provided the country in question has a stable economy and political system, they are a very safe investment. Accordingly, in periods of economic turmoil, investors may be willing to accept a negative overall return in order to have a safe haven for their money. For example, once the market value is compared to the total received from remaining interest payments and the face value, investors have been willing to accept a negative return on two-year German government bonds between 2014 and 2021. Conversely, if the underlying economy and political structures are weak, investors demand a higher return to compensate for the higher risk they take on. Consequently, the return on bonds in emerging markets like Brazil are consistently higher than that of the United States (and other developed economies). Inverted yield curves. When investors are worried about the financial future, it can lead to what is called an ‘inverted yield curve’. An inverted yield curve is where investors pay more for short term bonds than long term, indicating they do not have confidence in long-term financial conditions. Historically, the yield curve has historically inverted before each of the last five U.S. recessions. The last U.S. yield curve inversion occurred at several brief points in 2019 – a trend which continued until the Federal Reserve cut interest rates several times over that year. However, the ultimate trigger for the next recession was the unpredicted, exogenous shock of the global coronavirus (COVID-19) pandemic, showing how such informal indicators may be grounded just as much in coincidence as causation.",
+          "output": {
+            "sentiment": "negative",
+            "score": 0.9479
+          }
+        }
+      },
+      "sentiment": "negative",
+      "score": 0.9479,
+      "entities": [
+        {
+          "text": "Treasury",
+          "type": "ORG",
+          "start": 0,
+          "end": 0
+        },
+        {
+          "text": "U.S. 2025.",
+          "type": "ORG",
+          "start": 5,
+          "end": 6
+        },
+        {
+          "text": "K. Scholle,",
+          "type": "PER",
+          "start": 9,
+          "end": 10
+        },
+        {
+          "text": "3,",
+          "type": "PER",
+          "start": 12,
+          "end": 12
+        },
+        {
+          "text": "2006",
+          "type": "YEAR",
+          "start": 112,
+          "end": 112
+        },
+        {
+          "text": "treasury",
+          "type": "ORG",
+          "start": 117,
+          "end": 117
+        }
+      ],
+      "caption": null,
+      "alert_type": "REPUTATION_RISK",
+      "alert_text": "REPUTATION RISK: Treasury mentioned NEGATIVELY.",
+      "alert_mode": "rule_based",
+      "error": null
+    }
+  ]
+}
