@@ -6,6 +6,10 @@ Paste a financial headline, optionally attach the chart that came with it, and g
 
 Built from scratch in PyTorch for the NLP & Deep Learning course at Comillas ICAI (January–May 2026). No pretrained NER or sentiment model is used; both are trained here.
 
+**[Try it in your browser →](https://liiiaamm.github.io/ai-financial-news-alerts/)** The joint model runs client-side in plain JavaScript: it highlights entities, shows where its attention went, stamps the tone and prints the alert. No server, no install.
+
+[![The in-browser demo marking up a news story](docs/preview.png)](https://liiiaamm.github.io/ai-financial-news-alerts/)
+
 ## How it works
 
 ```mermaid
@@ -37,6 +41,21 @@ Joint model on the held-out test split (`results/joint_vs_separate.json`):
 | Sentiment | macro-F1 | 0.679 |
 
 Sharing the encoder raised sentiment macro-F1 by about 7 points over training it on its own. The full end-to-end run over the 10 demo samples in `input/` finished without failures (`results/batch_eval_full.json`).
+
+## Inference tokenization fix
+
+The original pipeline split raw text on spaces, so words reached the model glued to punctuation ("year,", "NASDAQ.") and missed the vocabulary, which was built from FiNER-ORD's punctuation-separated tokens. On the ten demo items that left 20.5 % of tokens unknown. `pipeline.tokenize()` now separates punctuation the way the training data does, bringing it to 9.3 %, and the extracted entities are visibly cleaner (no more "year," tagged as an organisation). Test-set scores are unchanged because evaluation already used pre-tokenized data.
+
+## In-browser demo
+
+| File | Role |
+|---|---|
+| `index.html`, `web/desk.css`, `web/desk.js` | The page |
+| `web/model.js` | Forward pass of the joint model in JavaScript, with the same tokenizer and alert rules as `pipeline.py` |
+| `scripts/export_web_model.py` | Exports `joint_best.pt` to float16 weights (5.9 MB) |
+| `scripts/build_web_samples.py` | Packs the 10 demo items with their offline chart captions |
+
+On the ten demo items the JavaScript model returns the same tones and entities as the PyTorch model (max logit difference 0.002 after float16 export).
 
 ## Run it
 

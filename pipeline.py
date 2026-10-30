@@ -7,6 +7,7 @@ import os
 import json
 import argparse
 import concurrent.futures
+import re
 from typing import Optional, Final
 
 # 3pps
@@ -43,6 +44,16 @@ TAG_ID_TO_NAME: Final[dict] = {
     7: "YEAR_B",
     8: "YEAR_I",
 }
+
+
+# Split punctuation from words, as in the FiNER-ORD training data. Splitting on whitespace
+# alone leaves tokens like "year," or "NASDAQ." that are not in the vocabulary.
+_TOKEN_RE = re.compile(r"\d+(?:[.,]\d+)*|[A-Za-z]+(?:\.[A-Za-z]+)+\.?|\w+(?:['’]\w+)*|'s|[^\w\s]")
+
+
+def tokenize(text: str) -> list[str]:
+    """Tokenise raw text the way the training data was tokenised."""
+    return _TOKEN_RE.findall(text)
 
 
 def _pick_device() -> torch.device:
@@ -316,7 +327,7 @@ def predict_sa(
     unk = word2idx.get("<UNK>", 1)
 
     # Encode and pad token sequence
-    tokens = text.lower().split()
+    tokens = [t.lower() for t in tokenize(text)]
     ids = [word2idx.get(t, unk) for t in tokens]
     length = min(len(ids), max_len)
     padded = ids[:max_len] + [0] * max(0, max_len - len(ids))
@@ -625,7 +636,7 @@ def run(
         alert and models_io fields.
     """
 
-    tokens = text.split()
+    tokens = tokenize(text)
 
     # Run NER and SA in parallel to reduce latency
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
