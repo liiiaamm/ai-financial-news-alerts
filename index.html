@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark it up: a neural network reads the financial news</title>
+<meta name="description" content="A small BiLSTM trained from scratch reads financial news in your browser: it highlights companies, people, places and years, judges the tone, and prints an alert.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="web/desk.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Mark it up</h1>
+  <p>A neural network reads financial news the way an analyst does on the night desk. It highlights who and where, judges whether the news is good or bad, and files an alert. It was trained from scratch, has three million weights, and runs here in your browser.</p>
+</header>
+
+<main>
+  <div class="desk">
+    <article class="sheet" id="sheet" aria-live="polite">
+      <div class="sheet-head">
+        <h2 id="storyTitle">Loading the model…</h2>
+        <div class="sheet-tools">
+          <button class="tool" id="editBtn" type="button">Write your own</button>
+        </div>
+      </div>
+      <figure class="clip" id="clip" hidden>
+        <img id="chartImg" alt="">
+        <figcaption class="sticky">
+          <p id="caption"></p>
+          <button class="more" id="captionMore" type="button">Read all</button>
+          <small>Written offline by DePlot and Qwen2.5-1.5B. Small models misread charts; compare it with the image.</small>
+        </figcaption>
+      </figure>
+      <div class="story" id="story"></div>
+      <label class="compose" id="compose" hidden>
+        <span class="sr-only">Your own news text</span>
+        <textarea id="composeText" rows="8" placeholder="Paste a headline or a paragraph of financial news…"></textarea>
+      </label>
+      <p class="cutoff" id="cutoff" hidden></p>
+      <div class="sheet-foot">
+        <button class="marker-btn" id="runBtn" type="button" disabled>Mark it up</button>
+        <ul class="legend" aria-label="Highlighter colours">
+          <li><span class="sw org"></span>Organisation</li>
+          <li><span class="sw per"></span>Person</li>
+          <li><span class="sw loc"></span>Place</li>
+          <li><span class="sw year"></span>Year</li>
+          <li><span class="sw pencil"></span>Where it looked</li>
+        </ul>
+      </div>
+    </article>
+
+    <aside class="side">
+      <div class="stamp-pad">
+        <div class="stamp" id="stamp" aria-live="polite"><span id="stampWord"></span><small id="stampConf"></small></div>
+      </div>
+      <div class="printer">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="receipt" id="receipt" aria-live="polite"></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="archive" aria-labelledby="archiveTitle">
+    <h2 id="archiveTitle">From the archive</h2>
+    <p>Ten real news items with their charts. Pick one and mark it up.</p>
+    <div class="cuttings" id="cuttings"></div>
+  </section>
+
+  <section class="hood">
+    <div class="paper">
+      <h2>How it reads</h2>
+      <p>Every word is looked up in a 6,231-word vocabulary initialised from GloVe vectors, then read left to right and right to left by a two-layer bidirectional LSTM. One shared encoder feeds two heads:</p>
+      <ul>
+        <li><strong>Entities.</strong> A linear layer tags every token as the beginning or inside of an organisation, person or place, trained on FiNER-ORD. Four-digit years are added by rule.</li>
+        <li><strong>Tone.</strong> An attention layer weighs every token, and a linear layer reads the weighted average as positive, negative or neutral. The pencil marks are those attention weights.</li>
+      </ul>
+      <p>Training both heads together, with the loss \(L = 0.6\,L_{\text{NER}} + 0.4\,L_{\text{SA}}\), lifted sentiment macro-F1 by about 7 points over training it alone.</p>
+      <table class="scores">
+        <thead><tr><th>Task</th><th>Metric</th><th>Test score</th></tr></thead>
+        <tbody>
+          <tr><td>Entities</td><td>micro-F1</td><td>0.687</td></tr>
+          <tr><td>Tone</td><td>accuracy</td><td>0.713</td></tr>
+          <tr><td>Tone</td><td>macro-F1</td><td>0.679</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="paper">
+      <h2>What to expect</h2>
+      <p>It is a small model trained on a few thousand sentences, and it shows. It can call a record quarter bad news, tag a surname as a year, or miss a name it has never seen. Scores near 50 % on the stamp mean it is guessing.</p>
+      <p>Building this page uncovered a bug in the original pipeline: it split text only on spaces, so words reached the model glued to punctuation ("year,", "NASDAQ.") and fell outside the vocabulary. On the ten archive items that left 20.5 % of tokens unknown. Splitting punctuation the way the training data does brings it down to 9.3 %, and the entities come out noticeably cleaner. The Python pipeline now uses the same tokenizer.</p>
+      <p>The weights are exported to 16-bit floats (5.9 MB) and the forward pass is written in plain JavaScript. On the ten archive items it gives the same tones and entities as the PyTorch model.</p>
+      <p class="links"><a href="https://github.com/liiiaamm/ai-financial-news-alerts">Code and training scripts</a> <a href="docs/Final_Paper.pdf">Full report (PDF)</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>NLP and Deep Learning course project at Comillas ICAI, built with Andrés Gil Vicente, Jorge Carnicero Príncipe and Jorge González Pérez. In-browser version by <a href="https://github.com/liiiaamm">Liam Esgueva</a>.</p>
+</footer>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+</svg>
+
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+<script src="web/model.js"></script>
+<script src="web/desk.js"></script>
+</body>
+</html>
